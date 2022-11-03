@@ -7,12 +7,21 @@ import java.util.List;
 
 public class GamePlay {
 
-    InputTerminalReader reader = new InputTerminalReader();
-    ContainedNumbersCounter cowsCounter = new ContainedNumbersCounter();
-    MatchedNumbersCounter bullsCounter = new MatchedNumbersCounter();
-    RandomNumberArrayGenerator generator = new RandomNumberArrayGenerator();
-    ResultPrinter resultPrinter = new ResultPrinter();
-    FileReaderWriter fileReaderWriter = new FileReaderWriter();
+    private final InputTerminalReader reader;
+    private final ContainedNumbersCounter cowsCounter;
+    private final MatchedNumbersCounter bullsCounter;
+    private final RandomNumberArrayGenerator generator;
+    private final ResultPrinter resultPrinter;
+    private final FileReaderWriter fileReaderWriter;
+
+    public GamePlay(){
+        reader = new InputTerminalReader();
+        cowsCounter = new ContainedNumbersCounter();
+        bullsCounter = new MatchedNumbersCounter();
+        generator = new RandomNumberArrayGenerator();
+        resultPrinter = new ResultPrinter();
+        fileReaderWriter = new FileReaderWriter();
+    }
     public void play() throws IOException {
 
         List<String> stringList = fileReaderWriter.getStringListFromFile();
